@@ -9,7 +9,6 @@ class UserSerializer(serializers.ModelSerializer):
         read_only_fields = ('date_joined',)
         extra_kwargs = {'password': {'write_only': True}}
 
-        #serailizers.CharField(max_length=255, required=True, write_only=True)
     def create(self, validated_data):
         # Extrae y hashea la contraseña antes de crear el usuario
         password = validated_data.pop('password')
